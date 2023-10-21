@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  <title>Users</title>
+{% endblock %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <h1>Users</h1>
+    <hr />
+    <h3>Create User</h3>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Create User</button>
+    </form>
+
+    <hr />
+    <ol>
+        {% for user in users %}
+        <li>
+            <ul>
+                <li>{{ user.first_name }}</li>
+                <li>{{ user.last_name }}</li>
+                <li>{{ user.email }}</li>
+            </ul>
+        </li>
+        <hr />
+        {% endfor %}
+    </ol>
+{% endblock %}
