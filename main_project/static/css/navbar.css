@@ -1,0 +1,23 @@
+nav {
+    height: 100vh;
+    background-color: #ffffff;
+    width: 150px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-right: solid 1px black;
+}
+nav > a {
+    width: 80%;
+    margin: 10px auto;
+    font-size: x-large;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+nav a:hover {
+    background-color: gray;
+    border-radius: 15px 15px 15px 15px;
+}
